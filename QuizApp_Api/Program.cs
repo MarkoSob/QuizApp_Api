@@ -13,6 +13,7 @@ using QuizApp_BL.Services.AuthService;
 using QuizApp_BL.Profiles;
 using QuizApp_BL.Services.QuizService;
 using QuizApp_DAL.BasicGenericRepository;
+using QuizApp_Api;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -126,7 +127,6 @@ app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
-
+app.MigrateDatabase();
 app.Run();
